@@ -7,6 +7,7 @@ const Navbar = () => {
                 <a href="/">Price</a>
                 <a href="/create">New Blog</a>
             </div>
+            
         </nav>
      );
 }
