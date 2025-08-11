@@ -4,10 +4,15 @@ const Home = () => {
         console.log('Check Mate!');
     };
 
+    const handleNewClick = (name) => {
+        console.log(`Hello ${name}, welcome to the Rative Blog!`);
+    }
+
     return ( 
         <div>
             <h1>Welcome to the Rative Blog</h1>
-            <button onClick={handleClick}>Click...</button>
+            <button onClick={handleClick} className="home-btn">Click Here</button>
+            <button onClick={handleNewClick('Suvendu')} className="home-btn">New Click</button>
         </div>
     );
 }
