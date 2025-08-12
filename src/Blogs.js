@@ -17,10 +17,10 @@ const Blogs = () => {
     <div>
       {/* Blog Preview Pannel: To see the lists of blogs */}
       <div className="home">
-        {blogs.map((blogs) => (
-          <div className="blog-preview" key={blogs.id}>
-            <h2>{blogs.title}</h2>
-            <p>Written by {blogs.author}</p>
+        {blogs.map((blog) => (
+          <div className="blog-preview" key={blog.id}>
+            <h2>{blog.title}</h2>
+            <p>Written by {blog.author}</p>
           </div>
         ))}
       </div>

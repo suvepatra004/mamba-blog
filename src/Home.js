@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Age from "./Age"; // Importing the Age component
 
 const Home = () => {
   const handleClick = () => {
