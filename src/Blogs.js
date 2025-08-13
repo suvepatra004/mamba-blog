@@ -1,22 +1,8 @@
-import { useState } from "react";
-
-const Blogs = () => {
-  // Sample data for blog-preview
-  const [blogs, _setBlogs] = useState([
-    { title: "My new website", body: "lorem ipsum...", author: "mario", id: 1 },
-    { title: "Welcome party!", body: "lorem ipsum...", author: "yoshi", id: 2 },
-    {
-      title: "Web dev top tips",
-      body: "lorem ipsum...",
-      author: "mario",
-      id: 3,
-    },
-  ]);
-
+const Blogs = ({ blogs = [] }) => {
   return (
     <div>
       {/* Blog Preview Pannel: To see the lists of blogs */}
-      <div className="home">
+      <div className="blog-list">
         {blogs.map((blog) => (
           <div className="blog-preview" key={blog.id}>
             <h2>{blog.title}</h2>

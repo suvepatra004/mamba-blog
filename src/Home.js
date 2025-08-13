@@ -1,7 +1,20 @@
 import { useState } from "react";
 import Age from "./Age"; // Importing the Age component
+import Blogs from "./Blogs"; // Importing the Blogs component
 
 const Home = () => {
+  // Properly initialized blogs state as an array of objects
+  const [blogs] = useState([
+    { id: 1, title: "My new website", body: "lorem ipsum...", author: "mario" },
+    { id: 2, title: "Welcome party!", body: "lorem ipsum...", author: "yoshi" },
+    {
+      id: 3,
+      title: "Web dev top tips",
+      body: "lorem ipsum...",
+      author: "mario",
+    },
+  ]);
+
   const handleClick = () => {
     console.log("Check Mate!");
   };
@@ -26,7 +39,7 @@ const Home = () => {
         <button onClick={handleClick} className="home-btn">
           Click Here
         </button>
-        <button onClick={handleNewClick("Suvendu")} className="home-btn">
+        <button onClick={() => handleNewClick("Suvendu")} className="home-btn">
           New Click
         </button>
 
@@ -36,9 +49,10 @@ const Home = () => {
         </button>
       </div>
       <div className="container-2">
-        <p>
-          {name} is {age} years old!
-        </p>
+        <Age name={name} age={age} />
+      </div>
+      <div className="container-3">
+        <Blogs blogs={blogs} />
       </div>
     </div>
   );
