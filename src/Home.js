@@ -52,7 +52,7 @@ const Home = () => {
         <Age name={name} age={age} />
       </div>
       <div className="container-3">
-        <Blogs blogs={blogs} />
+        <Blogs blogs={blogs} title="All Blogs Lists" />
       </div>
     </div>
   );
