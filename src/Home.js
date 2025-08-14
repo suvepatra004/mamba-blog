@@ -85,10 +85,6 @@ const Home = () => {
           blogs={blogs.filter((blogs) => blogs.author === "mario")}
           title="Mario's Blogs Lists"
         />
-        <button onClick={() => setAuthor("Suvendu")} className="home-btn">
-          Change Author Name
-        </button>
-        <p>{author}</p>
       </div>
     </div>
   );

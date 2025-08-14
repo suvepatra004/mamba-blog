@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import Home from "./Home";
-// import Blogs from "./Blogs";
+import Secondary_Home from "./Secondary_Home"; // <-- Add this line
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
         <Navbar />
         <div className="content">
           <Home />
+          <Secondary_Home />
         </div>
       </div>
     </div>
