@@ -53,6 +53,12 @@ const Home = () => {
       </div>
       <div className="container-3">
         <Blogs blogs={blogs} title="All Blogs Lists" />
+
+        {/* Filtering blogs by author 'mario' and passing to Blogs component */}
+        <Blogs
+          blogs={blogs.filter((blogs) => blogs.author === "mario")}
+          title="Mario's Blogs Lists"
+        />
       </div>
     </div>
   );

@@ -16,12 +16,20 @@ const Blogs = ({ blogs = [], title = "" }) => {
 
 export default Blogs;
 /**
+ * ============================================== Blogs Component ==============
+ *
  * This is a simple Blogs component that displays a list of blogs.
  * Each blog has a title, body, author, and an ID.
+ * Passed some default values for blogs and title to avoid errors if not provided.
+ *
+ * ============================================== Feature Points ==============
  *
  * >> The blogs are stored in the state using the 'useState' hook.
  * >> The blogs are mapped to display each blog's title and author.
+ *
+ * ==============================================
  */
+
 // --- IGNORE ---
 // import { useState } from "react"; --- IGNORE ---
 // const Blogs = () => { --- IGNORE ---
