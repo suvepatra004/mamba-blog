@@ -4,7 +4,7 @@ import Blogs from "./Blogs"; // Importing the Blogs component
 
 const Home = () => {
   // Properly initialized blogs state as an array of objects
-  const [blogs] = useState([
+  const [blogs, setBlogs] = useState([
     { id: 1, title: "My new website", body: "lorem ipsum...", author: "mario" },
     { id: 2, title: "Welcome party!", body: "lorem ipsum...", author: "yoshi" },
     {
@@ -15,10 +15,13 @@ const Home = () => {
     },
   ]);
 
+  // Function for handling button clicks
   const handleClick = () => {
     console.log("Check Mate!");
   };
 
+  // Function for handling new click with a dynamic name
+  // This function can be used to greet a user or perform an action based on the name
   const handleNewClick = (name) => {
     console.log(`Hello ${name}, welcome to the Rative Blog!`);
   };
@@ -32,27 +35,39 @@ const Home = () => {
     setAge(50);
   };
 
+  // Function for Deleting a Blog from the list
+  const handleDelete = (id) => {
+    const newBlogs = blogs.filter((blog) => blog.id !== id);
+    setBlogs(newBlogs);
+  };
+
+  // ----------------- Components Returns -----------------
   return (
     <div>
-      <div className="container-1">
+      <div className="container">
         <h1>Welcome to the Rative Blog</h1>
-        <button onClick={handleClick} className="home-btn">
+
+        {/* Buttons to be used Later */}
+        {/* <button onClick={handleClick} className="home-btn">
           Click Here
         </button>
         <button onClick={() => handleNewClick("Suvendu")} className="home-btn">
           New Click
-        </button>
+        </button> */}
 
         {/* Using the 'useState' hook for changing the name after clicking the button. */}
-        <button onClick={changeName} className="home-btn">
+        {/* <button onClick={changeName} className="home-btn">
           Change Details
-        </button>
+        </button> */}
       </div>
-      <div className="container-2">
-        <Age name={name} age={age} />
-      </div>
-      <div className="container-3">
-        <Blogs blogs={blogs} title="All Blogs Lists" />
+      <div className="container">{/* <Age name={name} age={age} /> */}</div>
+      <div className="container">
+        {/* Displaying the Age component with dynamic values */}
+        <Blogs
+          blogs={blogs}
+          title="All Blogs Lists"
+          handleDelete={handleDelete}
+        />
 
         {/* Filtering blogs by author 'mario' and passing to Blogs component */}
         <Blogs
