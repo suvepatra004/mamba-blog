@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Age from "./Age"; // Importing the Age component
 import Blogs from "./Blogs"; // Importing the Blogs component
 
@@ -14,6 +14,9 @@ const Home = () => {
       author: "mario",
     },
   ]);
+
+  // State for author name
+  const [author, setAuthor] = useState("mario");
 
   // Function for handling button clicks
   const handleClick = () => {
@@ -40,6 +43,14 @@ const Home = () => {
     const newBlogs = blogs.filter((blog) => blog.id !== id);
     setBlogs(newBlogs);
   };
+
+  // Using useEffect to log the blogs state whenever it changes
+  // After every render, this function will trigger and log the current blogs state
+  // If I add a 'dependency' then it will only run when that dependency changes
+  useEffect(() => {
+    console.log("useEffect re-renders.");
+    console.log(author);
+  }, [author]);
 
   // ----------------- Components Returns -----------------
   return (
@@ -74,6 +85,10 @@ const Home = () => {
           blogs={blogs.filter((blogs) => blogs.author === "mario")}
           title="Mario's Blogs Lists"
         />
+        <button onClick={() => setAuthor("Suvendu")} className="home-btn">
+          Change Author Name
+        </button>
+        <p>{author}</p>
       </div>
     </div>
   );
