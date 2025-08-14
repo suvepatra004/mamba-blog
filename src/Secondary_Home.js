@@ -5,6 +5,7 @@ const Secondary_Home = () => {
   const [blogs, setBlogs] = useState(null);
 
   useEffect(() => {
+    // npx json-server --watch data/ds.json --port 8010 => This command starts a JSON server to serve the data from ds.json file
     fetch("http://localhost:8010/blogs")
       .then((res) => {
         return res.json();
