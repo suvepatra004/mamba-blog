@@ -74,3 +74,9 @@
   color: #f1356d;
   margin-bottom: 8px;
 }
+.error-message {
+  color: red;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  margin: 10px 0;
+}
