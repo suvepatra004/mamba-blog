@@ -6,18 +6,19 @@ import Create from "./Create";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <div className="content">
-        <Router>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      {/* Using future features of v7 of React Router to eliminate the warning in browser console*/}
+      <div className="App">
+        <Navbar />
+        <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/secondary" element={<SecondaryHome />} />
             <Route path="/create" element={<Create />} />
           </Routes>
-        </Router>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 

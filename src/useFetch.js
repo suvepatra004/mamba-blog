@@ -6,9 +6,11 @@ const useFetch = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const abortCont = new AbortController();
+
     // npx json-server --watch data/ds.json --port 8010 => This command starts a JSON server to serve the data from ds.json file
     setTimeout(() => {
-      fetch(url)
+      fetch(url, { signal: abortCont.signal })
         .then((res) => {
           if (!res.ok) {
             throw Error("!! Could not fetch the data from the server");
@@ -21,10 +23,16 @@ const useFetch = (url) => {
           setError(null);
         })
         .catch((err) => {
-          setIsPending(false);
-          setError(err.message);
+          if (err.name === "AbortError") {
+            console.log("Fetch aborted");
+          } else {
+            setIsPending(false);
+            setError(err.message);
+          }
         });
     }, 1000); // Simulating a delay of 1 second before fetching data
+
+    return () => abortCont.abort(); // Cleanup function to abort the fetch request if the component unmounts
   }, [url]);
 
   return { data, isPending, error };
@@ -39,4 +47,8 @@ export default useFetch;
  * 2. Handle loading state.
  * 3. Handle any errors that may occur during the fetch operation.
  * 4. Return the fetched data, loading state, and error state.
+ *
+ * ---- AbortController ----
+ * >> AbortController is used to cancel the fetch request if the component unmounts before the fetch completes.
+ * >> The AbortController terminates the side-effects of the fetch request, preventing memory leaks.
  */

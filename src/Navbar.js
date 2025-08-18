@@ -1,15 +1,22 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
-    return ( 
-        <nav className="navbar">
-            <h1>Rative Blog</h1>
-            <div className="links">
-                <a href="/">Home</a>
-                <a href="/">Price</a>
-                <a href="/create">New Blog</a>
-            </div>
-            
-        </nav>
-     );
-}
- 
+  return (
+    <nav className="navbar">
+      <h1>Rative Blog</h1>
+      <div className="links">
+        <Link to="/" className="link">
+          Home
+        </Link>
+        <Link to="/secondary" className="link">
+          Favorites
+        </Link>
+        <Link to="/create" className="link">
+          New Blog
+        </Link>
+      </div>
+    </nav>
+  );
+};
+
 export default Navbar;
