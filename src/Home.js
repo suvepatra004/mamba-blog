@@ -5,13 +5,35 @@ import Blogs from "./Blogs"; // Importing the Blogs component
 const Home = () => {
   // Properly initialized blogs state as an array of objects
   const [blogs, setBlogs] = useState([
-    { id: 1, title: "My new website", body: "lorem ipsum...", author: "mario" },
-    { id: 2, title: "Welcome party!", body: "lorem ipsum...", author: "yoshi" },
+    {
+      id: 1,
+      title: "React Hooks Explained",
+      body: "A deep dive into React hooks and their usage.",
+      author: "sara",
+    },
+    {
+      id: 2,
+      title: "Understanding JavaScript Closures",
+      body: "Closures are a fundamental concept in JS.",
+      author: "alex",
+    },
     {
       id: 3,
-      title: "Web dev top tips",
-      body: "lorem ipsum...",
+      title: "CSS Grid vs Flexbox",
+      body: "Comparing layout techniques in modern CSS.",
       author: "mario",
+    },
+    {
+      id: 4,
+      title: "Async/Await in ES7",
+      body: "Simplifying asynchronous code in JavaScript.",
+      author: "yoshi",
+    },
+    {
+      id: 5,
+      title: "Deploying to Netlify",
+      body: "Step-by-step guide to deploy your site.",
+      author: "sara",
     },
   ]);
 
