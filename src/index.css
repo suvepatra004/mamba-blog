@@ -121,3 +121,74 @@
 .loading span {
   animation: blink 1s infinite;
 }
+
+/* Create new Blog Form */
+.create {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.create h2 {
+  font-size: 24px;
+  color: #f1356d;
+  margin-bottom: 20px;
+}
+.create form {
+  display: flex;
+  flex-direction: column;
+}
+.create label {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.create input,
+.create textarea {
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.create input:focus,
+.create textarea:focus {
+  border-color: #f1356d;
+  outline: none;
+}
+.create button {
+  padding: 10px;
+  background: #f1356d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.create button:hover {
+  background: #d1245c;
+}
+.create .error {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.create .success {
+  color: green;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+select {
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+select:focus {
+  border-color: #f1356d;
+  outline: none;
+}
