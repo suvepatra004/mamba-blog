@@ -84,3 +84,40 @@
   text-decoration: none;
   color: inherit;
 }
+
+/* Blog Details from BlogDetails.js */
+.blog-details {
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.blog-details h2 {
+  font-size: 24px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+.blog-details p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+.blog-details div {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* loading state */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
+  color: #f1356d;
+  font-weight: 600;
+}
+.loading span {
+  animation: blink 1s infinite;
+}

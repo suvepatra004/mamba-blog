@@ -24,11 +24,9 @@
       "react-app",
       "react-app/jest"
     ],
-    "eslintConfig": {
-      "rules": {
-        "no-unused-vars": "off",
-        "react/jsx-pascal-case": "off"
-      }
+    "rules": {
+      "no-unused-vars": "off",
+      "react/jsx-pascal-case": "off"
     }
   },
   "browserslist": {
