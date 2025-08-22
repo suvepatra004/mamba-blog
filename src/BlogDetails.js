@@ -10,7 +10,7 @@ const BlogDetails = () => {
   } = useFetch("http://localhost:8010/blogs/" + id);
 
   return (
-    <div class="blog-details">
+    <div className="blog-details">
       {isPending && (
         <div className="loading">
           <span>Loading...</span>

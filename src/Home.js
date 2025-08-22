@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Age from "./Age"; // Importing the Age component
 import Blogs from "./Blogs"; // Importing the Blogs component
+import useFetch from "./useFetch"; // Add this import at the top if not present
 
 const Home = () => {
   // Properly initialized blogs state as an array of objects
@@ -74,6 +75,12 @@ const Home = () => {
     console.log(author);
   }, [author]);
 
+  const {
+    data: fetchedBlogs,
+    isPending,
+    error,
+  } = useFetch("http://localhost:8010/blogs");
+
   // ----------------- Components Returns -----------------
   return (
     <div>
@@ -95,18 +102,21 @@ const Home = () => {
       </div>
       <div className="container">{/* <Age name={name} age={age} /> */}</div>
       <div className="container">
-        {/* Displaying the Age component with dynamic values */}
-        <Blogs
-          blogs={blogs}
-          title="All Blogs Lists"
-          handleDelete={handleDelete}
-        />
-
-        {/* Filtering blogs by author 'mario' and passing to Blogs component */}
-        <Blogs
-          blogs={blogs.filter((blogs) => blogs.author === "mario")}
-          title="Mario's Blogs Lists"
-        />
+        {error && <div>{error}</div>}
+        {isPending && <div>Loading...</div>}
+        {fetchedBlogs && (
+          <>
+            <Blogs
+              blogs={fetchedBlogs}
+              title="All Blogs Lists"
+              handleDelete={handleDelete}
+            />
+            <Blogs
+              blogs={fetchedBlogs.filter((blog) => blog.author === "mario")}
+              title="Mario's Blogs Lists"
+            />
+          </>
+        )}
       </div>
     </div>
   );

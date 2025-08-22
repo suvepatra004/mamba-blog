@@ -4,13 +4,30 @@ const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("Select Author");
+  const [isPending, setIsPending] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const blog = { title, body, author };
+
+    setIsPending(true);
+
+    fetch("http://localhost:8010/blogs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(blog),
+    }).then(() => {
+      console.log("New Blog Added");
+      setIsPending(false);
+    });
+  };
 
   return (
     <div className="create">
       <h2>Add a New Blog</h2>
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         {/* Form fields for creating a new blog */}
-        <label for="title">Blog Title:</label>
+        <label>Blog Title:</label>
         <input
           name="title"
           id="create-blog-title"
@@ -21,7 +38,7 @@ const Create = () => {
         />
 
         {/* Textarea for blog body */}
-        <label for="body">Blog body: </label>
+        <label>Blog body: </label>
         <textarea
           name="body"
           id="create-blog-body"
@@ -31,7 +48,7 @@ const Create = () => {
         ></textarea>
 
         {/* Input for blog author */}
-        <label for="select">Blog Author:</label>
+        <label>Blog Author:</label>
         <select
           name="select"
           id="select-author"
@@ -44,11 +61,8 @@ const Create = () => {
         </select>
 
         {/* Submit button for the form */}
-        <button>Submit</button>
-
-        <p>{title}</p>
-        <p>{body}</p>
-        <p>{author}</p>
+        {!isPending && <button>Add Blog</button>}
+        {isPending && <button disabled>Adding...</button>}
       </form>
     </div>
   );
