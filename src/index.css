@@ -62,15 +62,17 @@
 .delete-btn {
   padding: 10px;
   margin-top: 20px;
-  background: #ff4d4d;
-  color: white;
-  border: none;
+  background: transparent;
+  color: #f1356d;
+  border: 2px solid #f1356d;
   border-radius: 4px;
   cursor: pointer;
   font-weight: 700;
+  transition: background 0.2s, color 0.2s;
 }
 .delete-btn:hover {
-  background: #e04343;
+  background: #f1356d;
+  color: #fff;
 }
 
 /* blog previews / list */
@@ -204,4 +206,85 @@ select {
 select:focus {
   border-color: #f1356d;
   outline: none;
+}
+
+/* 404 Not Found Page */
+.error-404 {
+  text-align: center;
+  padding: 50px;
+}
+.error-404 h2 {
+  font-size: 48px;
+  color: #f1356d;
+  margin-bottom: 20px;
+}
+.error-404 p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+.error-404 a {
+  padding: 0;
+  background: none;
+  color: inherit;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.error-404 a:hover {
+  color: #f1356d;
+  background: none;
+}
+
+.error-404-card {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18); /* Increased shadow */
+  text-align: center;
+}
+
+.error-404-card h2 {
+  font-size: 48px;
+  color: #f1356d;
+  margin-bottom: 20px;
+}
+
+.error-404-card p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.error-404-card a {
+  padding: 0;
+  background: none;
+  color: inherit;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.error-404-card a:hover {
+  color: #f1356d;
+  background: none;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
