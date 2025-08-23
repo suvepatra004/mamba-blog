@@ -73,3 +73,14 @@ const Create = () => {
 };
 
 export default Create;
+
+/** * ================ Create Component ==============
+ * This is a simple Create component that allows users to add a new blog.
+ * The component contains a form with fields for the blog title, body, and author.
+ * When the form is submitted, a POST request is sent to the server to add the new blog.
+ *
+ * =================== Feature Points ==============
+ * >> The component uses the 'useState' hook to manage the state of the form fields and the loading state.
+ * >> The 'handleSubmit' function handles the form submission, sends the POST request, and navigates back to the home page upon <success class=""></success> of the request.
+ * >> The 'useNavigate' hook from 'react-router-dom' is used for programmatic navigation.
+ */

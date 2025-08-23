@@ -13,3 +13,8 @@ const NotFound = () => {
 };
 
 export default NotFound;
+
+/**
+ * >> NotFound component is added when the application got any wrong endpoint.
+ *
+ */
